@@ -1,14 +1,15 @@
-Multivariate regression introduction
+Introduction to multivariate regression
 =====
 transition:rotate
 author: Vladimir Jovanovic
+date: 25.01.2015.
 font-family: 'Risque'
 
 Introduction
 ========================================================
 
 The idea for this project is to provide a simple interactive application where a new student can learn some properties of multivariate regression.<br>
-The application uses the famous 'swiss' dataset, to predict fertility by using various population factors. The dataset especially good to study variable correlation.
+The application uses the famous ['swiss' dataset](http://www.inside-r.org/r-doc/datasets/swiss) to predict fertility by using various population factors. The dataset especially good to study variable correlation.
 
 - A user can see how coefficients and p-values change when variables are added/substracted from the linear model
 - A user can see that some variables are related
@@ -21,7 +22,6 @@ Interactive control
 ***
 
 ![checkboxes](figures/checkbox.png)
-<br>
 <br>
 <br>
 ![dropdown lists](figures/dropdown.png)
@@ -42,7 +42,10 @@ If a user selects Agriculture and Education, the following data (and plot) will 
 cor(swiss$Agriculture, swiss$Education)
 ```
 
+***
+
 ```{r , echo=FALSE}
+par(pin = c(4,4))
 plot(swiss$Agriculture, swiss$Education, xlab = "Agriculture", ylab = "Education")
 abline(lm(Education ~ Agriculture, swiss), col = "red")
 ```

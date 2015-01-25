@@ -28,7 +28,8 @@ shinyServer(
       })
 
       output$corPlot <- renderPlot({
-        par(pin = c(5,5))
+        par(mar = c(1,1,1,1))
+        par(pin = c(4,4))
         plot(swiss[, sel1], swiss[, sel2], xlab = sel1, ylab = sel2)
         abline(lm(swiss[, sel2] ~ swiss[, sel1]), col = "red")
       })

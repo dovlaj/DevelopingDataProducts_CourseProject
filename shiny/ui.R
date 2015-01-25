@@ -3,7 +3,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
   headerPanel("Multivariate regression and variable correlation"),
   sidebarPanel(
-    br(),
+    h4("User input"),
     br(),
     br(),
     br(),
@@ -18,7 +18,7 @@ shinyUI(pageWithSidebar(
                                       "Examination" = 3,
                                       "Education" = 4,
                                       "Catholic" = 5,
-                                      "Infant.Mortality" = 6),
+                                      "Infant Mortality" = 6),
                        selected = 2),
   br(),
   br(),
@@ -55,7 +55,7 @@ shinyUI(pageWithSidebar(
     p("The lectures from another course from the Specialization, 'Regression Models', were used to produce this application."),
     h4('Multivariate regression'),
     p("This data is located in the 'swiss' dataset, in the 'datasets' package. The data was gathered in 1888, a time of demographic change in Switzerland, and measured six quantities
-| in 47 French-speaking provinces of Switzerland."),
+ in 47 French-speaking provinces of Switzerland."),
     a("More info about the dataset and its variables", href="http://www.inside-r.org/r-doc/datasets/swiss"),
     p("The goal is to predict Fertility using a subset of the other variables."),
     p("You can select which variables you want to include in the regression function by selecting them on the left panel:"),
@@ -70,6 +70,8 @@ shinyUI(pageWithSidebar(
     p("Correlation has values from -1 to 1. You will notice that correlation between a variable and itself is 1."),
     h5('The correlation between the selected two variables is:'),
     verbatimTextOutput("cor"),
-    plotOutput('corPlot')
+    plotOutput('corPlot'),
+    p("Author: Vladimir Jovanovic"),
+    p("Date: 25.01.2015.")
     )
   ))
