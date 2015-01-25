@@ -35,7 +35,7 @@ shinyUI(pageWithSidebar(
   h4("Correlation"),
   p("To investigate the dataset further, you can check if variables are correlated."),
   
-  selectInput("select1", label = h5("Calculate covariance between variable:"), 
+  selectInput("select1", label = h5("Calculate correlation between variable:"), 
               choices = list("Agriculture" = 2,
                              "Examination" = 3,
                              "Education" = 4,
