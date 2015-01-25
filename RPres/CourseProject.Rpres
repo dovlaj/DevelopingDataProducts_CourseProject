@@ -1,0 +1,42 @@
+Multivariate regression introduction
+=====
+transition:rotate
+author: Vladimir Jovanovic
+font-family: 'Risque'
+
+Introduction
+========================================================
+
+- Bullet 1
+- Bullet 2
+
+***
+
+- Bullet 3
+
+Interactive control
+========================================================
+
+
+
+Regression showcase
+========================================================
+The application will use the variables the user selects to fit a linear model.<br>
+For example, if a user checks the checkboxes next to Agriculture, Education and Catholic, the following code will be executed.
+```{r}
+lm(Fertility ~ Agriculture + Education + Catholic, swiss)
+```
+
+Correlation showcase
+========================================================
+When a user selects variables from the two drop-down lists, he will see the correlation between them.<br>
+If a user selects Agriculture and Education, the following data (and plot) will be displayed:
+```{r, echo=FALSE}
+cor(swiss$Agriculture, swiss$Education)
+```
+
+```{r , echo=FALSE}
+plot(swiss$Agriculture, swiss$Education, xlab = "Agriculture", ylab = "Education")
+abline(lm(Education ~ Agriculture, swiss), col = "red")
+```
+

@@ -7,7 +7,7 @@ shinyServer(
     observe({
       if (is.null(input$vars))
       {
-        output$fit <- renderPrint({})
+        output$fit <- renderPrint({"Select at least one variable."})
       }
       else
       {
